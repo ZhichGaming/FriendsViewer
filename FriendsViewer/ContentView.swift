@@ -41,6 +41,10 @@ struct ContentView: View {
     }
     
     func getFriends() async {
+        if !users.isEmpty {
+            return
+        }
+        
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
             print("Invalid URL")
             return
